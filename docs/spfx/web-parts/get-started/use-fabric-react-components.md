@@ -10,6 +10,12 @@ The following image shows a DocumentCard component created with Office UI Fabric
 
 ![Image of a DocumentCard Fabric component in a SharePoint workbench](../../../../images/fabric-components-doc-card-view-ex.png)
 
+You can also follow these steps by watching the video on the [SharePoint PnP YouTube Channel](https://www.youtube.com/watch?v=P8WmNhcSWHU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+
+<a href="https://www.youtube.com/watch?v=P8WmNhcSWHU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<img src="../../../../images/spfx-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
+
 
 ## Create a new web part project
 
@@ -106,7 +112,7 @@ To use Office UI Fabric components, you need to install the npm package.
 In the console window, type the following to install the Office UI Fabric component npm package:
 
 ```
-npm i office-ui-fabric-react --save
+npm install office-ui-fabric-react --save
 ```
 
 >**Note:** If you're using Windows, you might get the following exception during this installation: "Error: EPERM: operation not permitted,...". To solve the issue, reopen your console application as an administrator. Open the context menu (right-click) and choose **Run as administrator**. 

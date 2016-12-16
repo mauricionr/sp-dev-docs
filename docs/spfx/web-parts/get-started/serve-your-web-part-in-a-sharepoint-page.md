@@ -9,6 +9,13 @@ Be sure you have completed the procedures in the following articles before you s
 * [Build your first SharePoint client-side web part](./build-a-hello-world-web-part)
 * [Connect your client-side web part to SharePoint](./connect-to-sharepoint)
 
+You can also follow these steps by watching the video on the [SharePoint PnP YouTube Channel](https://www.youtube.com/watch?v=G9JB1HuNs7Q&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+
+<a href="https://www.youtube.com/watch?v=G9JB1HuNs7Q&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<img src="../../../../images/spfx-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
+
+
 ## Package the HelloWorld web part
 
 In the console window, go to the web part project directory created in [Build your first SharePoint client-side web part](./build-a-hello-world-web-part).
@@ -35,7 +42,7 @@ The **package-solution.json** file defines the package metadata as shown in the 
 	"version": "1.0.0.0"
 	},
 	"paths": {
-	"zippedPackage": "helloworld-webpart.spapp"
+	"zippedPackage": "solution/helloworld-webpart.spapp"
 	}
 }
 ```
@@ -46,7 +53,7 @@ In the console window, enter the following command to package your client-side s
 gulp package-solution
 ```
 
-The command will create the package in the `sharepoint` folder:
+The command will create the package in the `sharepoint/solution` folder:
 
 ```
 helloworld-webpart.spapp
@@ -81,6 +88,8 @@ This will deploy the client-side solution package. Since this is a full trust cl
 	
 Choose **Deploy**
 
+>**Note:** If package deployment fails, then you may be using a normal tenant. Make sure you [set up your Office 365 tenant](../../set-up-your-developer-tenant) to have First Release options enabled or use a Office 365 Developer Tenant. 
+
 ## Install the client-side solution on your site
 
 Go to your developer site collection.
@@ -109,7 +118,7 @@ Notice that the **internalModuleBaseUrls** property in the **loaderConfig** entr
 
 ```json
 "internalModuleBaseUrls": [
-	"http://`your-local-machine-name`:4321/"
+	"https://`your-local-machine-name`:4321/"
 ]
 ```
 
@@ -121,7 +130,7 @@ In the console window that has the **helloworld-webpart** project directory, run
 gulp serve --nobrowser
 ```
 
->**Note:** `--nobrowser` will not automatically launch the Web Part Workbench.
+>**Note:** `--nobrowser` will not automatically launch the SharePoint Workbench.
 
 ## Add the HelloWorld web part to classic page
 
@@ -145,10 +154,6 @@ In the Web Part Gallery, choose the category **Custom**.
 	
 >**Note:** During preview, client-side web parts will be available under the **Custom** category in the web part gallery. 
 
-You should see your Hello World web part.
-
-![Web Part gallery opened with custom category](../../../../images/webpart-gallery-helloworld.png)
-	
 Select the Hello World web part and choose **Add** to add it to the page.
 	
 The web part assets will be loaded from the local environment. In order to load the scripts hosted on your local computer, you need to enable the browser to load unsafe scripts. Depending on the browser you are using, make sure you enable loading unsafe scripts for this session.
@@ -186,6 +191,8 @@ Choose the **Ok** button in the server-side property pane to save and close the 
 Since the web part is running in a classic SharePoint page, choosing **Ok** or **Apply** buttons will save the web part properties.
 	
 In the ribbon, choose **Save** to save the page.
+
+>**Note:** Starting from drop 6, client-side web parts work also properly with modern pages.
 
 ## Next steps
 
